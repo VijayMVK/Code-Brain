@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   launchFilterApi: string = "&launch_success=";
   landingFilterApi: string = "&land_success=";
   yearFilterApi: string = "&launch_year=";
+  
+  spaceXList: Array<SpaceXModel>;
   public showOverlay = false;
   parameters = {
     Year: -1,
@@ -28,7 +30,6 @@ export class AppComponent implements OnInit {
     { "value": 2018, "isActive": false }, { "value": 2019, "isActive": false },
     { "value": 2020, "isActive": false }];
 
-  private spaceXList: Array<SpaceXModel>;
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
