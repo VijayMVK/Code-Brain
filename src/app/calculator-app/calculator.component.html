@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <form>
+        <div class="row">
+            <div class="col-md-2 form-group" *ngFor="let input of inputs;let i = index">
+                <input *ngIf="input.type == 'text'" name="text{{i}}" class="form-control" type="number"
+                    [(ngModel)]="input.value" placeholder="Enter The Value" />
+                <select *ngIf="input.type == 'select'" name="select{{i}}" placeholder="Enter The Value"
+                    [(ngModel)]="input.value" class="form-control">
+                    <option *ngFor="let op of operators">{{op.val}}</option>
+                </select>
+            </div>
+            <div class="col-md-1">=</div>
+            <div class="col-md-2 form-group">
+                <input name="res" class="form-control" placeholder="Result" type="number" [(ngModel)]="result"
+                    disabled />
+            </div>
+            <div class="col-md-2 form-group">
+                <button type="submit" class="btn btn-primary" [disabled]="isDisable()" (click)="cal()">Count</button>
+            </div>
+        </div>
+    </form>
+</div>
